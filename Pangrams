@@ -1,0 +1,36 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+static void pangrams(String s) {
+             int x=0;
+        String a=s.toLowerCase();
+       for(char i='a';i<='z';i++)
+       {
+           if(!(a.contains(i+"")))
+              {
+               x=1;          
+                  break;
+              }
+        }
+        if(x==0)
+        {
+            System.out.println("pangram");
+        }
+        else
+        {
+              System.out.println("not pangram");
+        }
+    }
+    public static void main(String[] args) throws IOException {
+ Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+       pangrams(s);
+    }
+}
