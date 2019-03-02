@@ -1,0 +1,48 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the kangaroo function below.
+  public  static void kangaroo(int x1, int v1, int x2, int v2) {
+boolean a=false;
+        int sum1=x1+v1;
+        int sum2=x2+v2;              
+               while(!a)
+               {                   
+                if(sum1==sum2)
+                {
+                    System.out.println("YES");
+                    a=true;
+                }
+                else
+                {
+                     sum1=sum1+v1;
+                     sum2=sum2+v2;
+                    if(sum1>90000000 && sum2>90000000)
+                    {
+                        a=false;
+                        break;
+                    }
+                 }
+               }   
+  if(a==false)
+            {
+                System.out.println("NO");
+             }
+    }
+    public static void main(String[] args)  {
+         Scanner scanner = new Scanner(System.in);
+        int x1 =scanner.nextInt();
+        int v1 = scanner.nextInt();
+        int x2 =scanner.nextInt();
+        int v2 = scanner.nextInt();
+       kangaroo(x1, v1, x2, v2);
+              scanner.close();
+    }
+}
